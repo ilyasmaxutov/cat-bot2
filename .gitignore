@@ -1,0 +1,5 @@
+.env
+google_creds.json
+logs/
+__pycache__/
+*.pyc

@@ -1,0 +1,19 @@
+version: 1
+formatters:
+  default:
+    format: "%(asctime)s %(levelname)s %(name)s %(message)s"
+handlers:
+  file:
+    class: logging.handlers.RotatingFileHandler
+    filename: logs/bot.log
+    maxBytes: 1048576
+    backupCount: 3
+    formatter: default
+loggers:
+  bot:
+    level: DEBUG
+    handlers: [file]
+    propagate: no
+root:
+  level: INFO
+  handlers: [file]
