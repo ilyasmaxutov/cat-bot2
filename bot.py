@@ -18,6 +18,10 @@ GOOGLE_SHEETS_ID = os.getenv("GOOGLE_SHEETS_ID")
 GOOGLE_SHEETS_CREDS_JSON = os.getenv("GOOGLE_SHEETS_CREDS_JSON")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
+if os.getenv("GOOGLE_CREDS_JSON_RAW"):
+    with open("google_creds.json", "w", encoding="utf-8") as f:
+        f.write(os.getenv("GOOGLE_CREDS_JSON_RAW"))
+
 # === Логирование ===
 with open("logging.yaml", "r") as f:
     logging_config = yaml.safe_load(f)
