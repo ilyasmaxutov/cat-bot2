@@ -222,6 +222,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 # === Точка входа ===
 def main():
+    print("🚀 Bot main() entrypoint reached")
     if not TELEGRAM_BOT_TOKEN:
         raise Exception("TELEGRAM_BOT_TOKEN не найден")
     app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
