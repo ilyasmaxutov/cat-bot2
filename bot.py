@@ -29,6 +29,10 @@ os.makedirs("logs", exist_ok=True)
 with open("logging.yaml", "r") as f:
     logging_config = yaml.safe_load(f)
 logging.config.dictConfig(logging_config)
+# Добавляем вывод логов в консоль для облачного хостинга
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.INFO)
+logging.getLogger().addHandler(console_handler)
 logger = logging.getLogger("bot")
 
 # === Маппинг команд BotFather → триггер ===
