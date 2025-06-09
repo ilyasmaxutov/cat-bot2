@@ -23,6 +23,9 @@ if os.getenv("GOOGLE_CREDS_JSON_RAW"):
         f.write(os.getenv("GOOGLE_CREDS_JSON_RAW"))
 
 # === Логирование ===
+# Убедимся, что директория для логов существует
+os.makedirs("logs", exist_ok=True)
+
 with open("logging.yaml", "r") as f:
     logging_config = yaml.safe_load(f)
 logging.config.dictConfig(logging_config)
