@@ -17,6 +17,7 @@ TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 GOOGLE_SHEETS_ID = os.getenv("GOOGLE_SHEETS_ID")
 GOOGLE_SHEETS_CREDS_JSON = os.getenv("GOOGLE_SHEETS_CREDS_JSON")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+TELEGRAM_BOT_USERNAME = os.getenv("TELEGRAM_BOT_USERNAME")
 
 if os.getenv("GOOGLE_CREDS_JSON_RAW"):
     with open("google_creds.json", "w", encoding="utf-8") as f:
@@ -81,7 +82,7 @@ async def ask_openrouter(messages):
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://t.me/KotikNotLonelyBot"  # ОБЯЗАТЕЛЬНО укажи реальный username своего бота!
+        "HTTP-Referer": "https://t.me/{TELEGRAM_BOT_USERNAME}"  # ОБЯЗАТЕЛЬНО укажи реальный username своего бота!
     }
     data = {
         "model": "google/gemini-2.0-flash-exp:free",
